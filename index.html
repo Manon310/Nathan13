@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Activation Nathan 13.0</title>
+<style>
+body{font-family:Arial,sans-serif;background:#fff;color:#333;display:flex;justify-content:center;margin:0}
+.card{max-width:700px;margin:40px;padding:30px;border:2px solid #2b6cb0;border-radius:14px}
+h1{color:#2b6cb0;text-align:center}
+h2{text-align:center;font-weight:normal}
+#log{font-family:monospace;background:#f6f8fa;padding:15px;border-radius:8px;min-height:90px}
+.bar{height:18px;background:#ddd;border-radius:9px;overflow:hidden;margin-top:10px}
+.fill{height:100%;width:0;background:#3cb371;transition:width .8s}
+#content{display:none}
+ul{line-height:1.8}
+.footer{margin-top:30px;text-align:center;color:#666;font-size:.9em}
+</style>
+</head>
+<body>
+<div class="card">
+<div id="boot">
+<h1>Initialisation…</h1>
+<div id="log">Connexion…</div>
+<div class="bar"><div class="fill" id="fill"></div></div>
+</div>
+
+<div id="content">
+<h1>🎉 ACTIVATION RÉUSSIE !</h1>
+<h2>Nathan 13.0 est maintenant opérationnel.</h2>
+
+<ul style="list-style:none;padding-left:0">
+<li>✅ Gentillesse</li>
+<li>✅ Bonne humeur</li>
+<li>✅ Passion des jeux vidéo</li>
+<li>✅ Extension de mémoire financière : <strong>+50 CHF installée avec succès</strong></li>
+</ul>
+
+<hr>
+
+<h2>🎂 Bon anniversaire Nathan&nbsp;!</h2>
+
+<p>Nous te souhaitons une année remplie de bonne humeur,<br>
+de jeux vidéo (mais pas trop 😉),<br>
+de belles découvertes<br>
+et de beaucoup de rires.</p>
+
+<p>Nous t'embrassons très fort.</p>
+
+<p><strong>Pierre-Jean &amp; Manon</strong><br>
+06.07.2026</p>
+
+<p><strong>✔ Fin de l'installation.</strong><br>
+<em>Aucun redémarrage n'est nécessaire. 😄</em></p>
+
+<div class="footer">
+Version unique – Édition spéciale Nathan
+</div>
+</div>
+</div>
+
+<script>
+const msgs=[
+"Connexion au serveur…",
+"Recherche de Nathan 13.0…",
+"Installation de l'extension mémoire…",
+"Finalisation…"
+];
+const log=document.getElementById("log");
+const fill=document.getElementById("fill");
+let i=0;
+function step(){
+ if(i<msgs.length){
+   log.textContent=msgs[i];
+   fill.style.width=((i+1)/msgs.length*100)+"%";
+   i++;
+   setTimeout(step,900);
+ }else{
+   document.getElementById("boot").style.display="none";
+   document.getElementById("content").style.display="block";
+ }
+}
+setTimeout(step,600);
+</script>
+</body>
+</html>
